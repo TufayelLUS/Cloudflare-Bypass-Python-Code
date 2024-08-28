@@ -18,8 +18,8 @@ s = requests.Session()
 async def getPageData():
     global s
     config = Config()
-    # add extension if needed
-    # config.add_extension(os.path.join(os.getcwd(), "plugin/2captcha"))
+    # add extension if needed, comment below line if you don't want to use captcha solver
+    config.add_extension(os.path.join(os.getcwd(), "plugin/2captcha"))
     driver = await uc.start(config=config)
     page = await driver.get(target_link)
     sleep(1)
